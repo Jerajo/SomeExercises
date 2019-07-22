@@ -1,8 +1,0 @@
-** Requisitos **
-1. Android 5 a Android Pie 9.
-2. Probado en Android 9.
-
-** Instalación **
-1. Pase el apk dentro de la carpeta "Android" al movil.
-2. Instale el apk.
-3. Ejecute la aplicación.
