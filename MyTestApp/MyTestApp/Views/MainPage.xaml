@@ -1,28 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
-            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:views="clr-namespace:MyTestApp.Views"
-            x:Class="MyTestApp.Views.MainPage">
+<TabbedPage
+    x:Class="MyTestApp.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:MyTestApp.Views">
     <TabbedPage.Children>
-        <NavigationPage Title="Browse">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_feed.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
+        <NavigationPage Title="Ejercicio" IconImageSource="1.png">
             <x:Arguments>
-                <views:ItemsPage />
+                <views:Exercise1 />
             </x:Arguments>
         </NavigationPage>
-        
-        <NavigationPage Title="About">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_about.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
+
+        <NavigationPage Title="Ejercicio" IconImageSource="2.png">
             <x:Arguments>
-                <views:AboutPage />
+                <views:Exercise2 />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Ejercicio" IconImageSource="3.png">
+            <x:Arguments>
+                <views:Exercise3 />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Ejercicio" IconImageSource="4.png">
+            <x:Arguments>
+                <views:Exercise4 />
             </x:Arguments>
         </NavigationPage>
     </TabbedPage.Children>

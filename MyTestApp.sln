@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTestApp.Android", "MyTestApp\MyTestApp.Android\MyTestApp.Android.csproj", "{A217E37B-8FB3-4F80-88CE-D506645C276E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTestApp.UWP", "MyTestApp\MyTestApp.UWP\MyTestApp.UWP.csproj", "{965A36C7-8FAE-4C32-A98E-DAE48D0910FC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTestApp", "MyTestApp\MyTestApp\MyTestApp.csproj", "{D546F7F8-94FA-454D-8EB0-D97691B2D61E}"
@@ -21,30 +19,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Debug|ARM.Build.0 = Debug|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Debug|ARM.Deploy.0 = Debug|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Debug|x64.Build.0 = Debug|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Debug|x64.Deploy.0 = Debug|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Debug|x86.Build.0 = Debug|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Debug|x86.Deploy.0 = Debug|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Release|ARM.ActiveCfg = Release|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Release|ARM.Build.0 = Release|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Release|ARM.Deploy.0 = Release|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Release|x64.ActiveCfg = Release|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Release|x64.Build.0 = Release|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Release|x64.Deploy.0 = Release|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Release|x86.ActiveCfg = Release|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Release|x86.Build.0 = Release|Any CPU
-		{A217E37B-8FB3-4F80-88CE-D506645C276E}.Release|x86.Deploy.0 = Release|Any CPU
 		{965A36C7-8FAE-4C32-A98E-DAE48D0910FC}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{965A36C7-8FAE-4C32-A98E-DAE48D0910FC}.Debug|Any CPU.Build.0 = Debug|x86
 		{965A36C7-8FAE-4C32-A98E-DAE48D0910FC}.Debug|Any CPU.Deploy.0 = Debug|x86

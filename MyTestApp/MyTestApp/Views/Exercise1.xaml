@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MyTestApp.Views.Exercise1"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:MyTestApp.ViewModels"
+    Title="{Binding Title}"
+    IsEnabled="{Binding IsNotBusy}">
+    <ContentPage.BindingContext>
+        <vm:Exercise1ViewModel />
+    </ContentPage.BindingContext>
+    <ScrollView HorizontalScrollBarVisibility="Never">
+        <StackLayout Margin="10">
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    Text="{Binding FilePath}"
+                    VerticalOptions="CenterAndExpand" />
+                <Button
+                    Command="{Binding PickFile}"
+                    HorizontalOptions="End"
+                    Text="Seleccionar archivo" />
+            </StackLayout>
+            <StackLayout>
+                <StackLayout IsVisible="{Binding IsFileLoaded}">
+                    <ScrollView
+                        BackgroundColor="Black"
+                        HeightRequest="200"
+                        HorizontalScrollBarVisibility="Always">
+                        <Label
+                            Margin="10"
+                            LineBreakMode="NoWrap"
+                            Text="{Binding DocumentText}"
+                            TextColor="White" />
+                    </ScrollView>
+                    <Button
+                        Command="{Binding OrderDocumentInverseAscendance}"
+                        HorizontalOptions="End"
+                        Text="Ordenar" />
+                </StackLayout>
+                <StackLayout IsVisible="{Binding IsDocumentOrdened}">
+                    <ScrollView
+                        BackgroundColor="Black"
+                        HeightRequest="200"
+                        HorizontalScrollBarVisibility="Always">
+                        <Label
+                            Margin="10"
+                            LineBreakMode="NoWrap"
+                            Text="{Binding OrganizedDocumentText}"
+                            TextColor="White" />
+                    </ScrollView>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Entry Placeholder="Nombre de archivo" Text="{Binding NewFileName}" />
+                        <Button
+                            Grid.Column="1"
+                            Command="{Binding SaveFile}"
+                            Text="Guardar"
+                            VerticalOptions="End" />
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
