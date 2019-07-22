@@ -6,7 +6,8 @@
     xmlns:c="clr-namespace:MyTestApp.Views.Converters"
     xmlns:vm="clr-namespace:MyTestApp.ViewModels"
     Title="{Binding Title}"
-    IsEnabled="{Binding IsNotBusy}">
+    IsEnabled="{Binding IsNotBusy}"
+    Visual="Material">
     <ContentPage.BindingContext>
         <vm:Exercise3ViewModel />
     </ContentPage.BindingContext>
@@ -16,7 +17,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ScrollView HorizontalScrollBarVisibility="Never">
-        <StackLayout Margin="10">
+        <StackLayout Margin="10,10,10,50">
             <Button
                 Command="{Binding GenerateOperation}"
                 HorizontalOptions="End"
@@ -27,7 +28,6 @@
                 IsVisible="{Binding JSONText, Converter={x:StaticResource StringToBool}, Mode=OneWay}">
                 <Label
                     Margin="10"
-                    LineBreakMode="NoWrap"
                     Text="{Binding JSONText}"
                     TextColor="White" />
             </ScrollView>

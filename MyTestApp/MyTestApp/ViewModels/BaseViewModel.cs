@@ -1,8 +1,8 @@
-﻿using Nut;
-using System;
+﻿using System;
 using MyTestApp.Models;
 using System.ComponentModel;
 using System.Threading.Tasks;
+using MyTestApp.PortableClases;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Runtime.CompilerServices;
@@ -158,7 +158,7 @@ namespace MyTestApp.ViewModels
             List<string> options = new List<string>();
             int number = int.Parse(operation.Problem.ToString());
 
-            string numberInWords = number.ToText("es");
+            string numberInWords = number.ToText();
 
             FixeNumber(ref numberInWords);
 
@@ -204,7 +204,7 @@ namespace MyTestApp.ViewModels
                 string newWord = "";
                 do
                 {
-                    newWord = Randomizer.Next(100).ToText("es");
+                    newWord = Randomizer.Next(100).ToText();
                 }
                 while (options.Contains(newWord));
                 options.Add(newWord);

@@ -1,0 +1,7 @@
+** Requisitos **
+1. Windows 10
+
+** Instalación **
+1. Ejecute el archivo "." dentro de UWP.
+2. Siga las instrucciones de instalación.
+3. Ejecutela.

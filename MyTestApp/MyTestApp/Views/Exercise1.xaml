@@ -5,13 +5,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:vm="clr-namespace:MyTestApp.ViewModels"
     Title="{Binding Title}"
-    IsEnabled="{Binding IsNotBusy}">
+    IsEnabled="{Binding IsNotBusy}"
+    Visual="Material">
     <ContentPage.BindingContext>
         <vm:Exercise1ViewModel />
     </ContentPage.BindingContext>
     <ScrollView HorizontalScrollBarVisibility="Never">
-        <StackLayout Margin="10">
-            <StackLayout Orientation="Horizontal">
+        <StackLayout Margin="10,10,10,50">
+            <StackLayout Orientation="{OnPlatform Android=Vertical, UWP=Horizontal}">
                 <Label
                     HorizontalOptions="CenterAndExpand"
                     Text="{Binding FilePath}"
@@ -22,46 +23,56 @@
                     Text="Seleccionar archivo" />
             </StackLayout>
             <StackLayout>
-                <StackLayout IsVisible="{Binding IsFileLoaded}">
-                    <ScrollView
-                        BackgroundColor="Black"
-                        HeightRequest="200"
-                        HorizontalScrollBarVisibility="Always">
+                <Grid IsVisible="{Binding IsFileLoaded}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ScrollView BackgroundColor="Black" HeightRequest="200">
                         <Label
                             Margin="10"
-                            LineBreakMode="NoWrap"
                             Text="{Binding DocumentText}"
                             TextColor="White" />
                     </ScrollView>
                     <Button
+                        Grid.Row="1"
                         Command="{Binding OrderDocumentInverseAscendance}"
                         HorizontalOptions="End"
                         Text="Ordenar" />
-                </StackLayout>
-                <StackLayout IsVisible="{Binding IsDocumentOrdened}">
-                    <ScrollView
-                        BackgroundColor="Black"
-                        HeightRequest="200"
-                        HorizontalScrollBarVisibility="Always">
+                </Grid>
+                <Grid IsVisible="{Binding IsDocumentOrdened}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ScrollView BackgroundColor="Black" HeightRequest="200">
                         <Label
                             Margin="10"
-                            LineBreakMode="NoWrap"
                             Text="{Binding OrganizedDocumentText}"
                             TextColor="White" />
                     </ScrollView>
-                    <Grid>
+                    <Grid Grid.Row="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <Entry Placeholder="Nombre de archivo" Text="{Binding NewFileName}" />
+                        <Entry
+                            Grid.ColumnSpan="{OnPlatform Android=2,
+                                                         UWP=1}"
+                            Placeholder="Nombre de archivo"
+                            Text="{Binding NewFileName}" />
                         <Button
-                            Grid.Column="1"
+                            Grid.Row="{OnPlatform Android=1,
+                                                  UWP=0}"
+                            Grid.Column="{OnPlatform Android=0,
+                                                     UWP=1}"
+                            Grid.ColumnSpan="{OnPlatform Android=2,
+                                                         UWP=1}"
                             Command="{Binding SaveFile}"
                             Text="Guardar"
                             VerticalOptions="End" />
                     </Grid>
-                </StackLayout>
+                </Grid>
             </StackLayout>
         </StackLayout>
     </ScrollView>
