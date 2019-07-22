@@ -1,7 +1,6 @@
 ﻿using Android.OS;
 using Android.App;
 using Android.Content.PM;
-using System;
 
 namespace MyTestApp.Android
 {

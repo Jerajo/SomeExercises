@@ -3,6 +3,7 @@ using System.Linq;
 using Xamarin.Forms;
 using PropertyChanged;
 using MyTestApp.Models;
+using Xamarin.Essentials;
 using System.Windows.Input;
 using System.Collections.Generic;
 using MyTestApp.Models.Interfaces;
@@ -129,7 +130,15 @@ namespace MyTestApp.ViewModels
                 {
                     IFileHelper service = DependencyService.Get<IFileHelper>();
 
-                    await service?.WriteDocument(".csv", NewFileName, OrganizedDocumentText);
+                    string fileName = NewFileName ?? "Ejercicio1Ordenado";
+
+                    await service?.WriteDocument(".csv", fileName, OrganizedDocumentText);
+
+                    if (Device.RuntimePlatform == Device.Android)
+                    {
+                        var appDirectory = FileSystem.AppDataDirectory;
+                        await ShowAlert($"El archivo se guardo en: {appDirectory}/{fileName}.csv");
+                    }
                 }
                 else
                 {

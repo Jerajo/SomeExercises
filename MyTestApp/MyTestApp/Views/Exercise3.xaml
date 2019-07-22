@@ -36,7 +36,11 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <Entry Placeholder="Nombre de archivo" Text="{Binding NewFileName}" />
+                <Entry
+                    IsVisible="{OnPlatform Android=False,
+                                           UWP=True}"
+                    Placeholder="Nombre de archivo"
+                    Text="{Binding NewFileName}" />
                 <Button
                     Grid.Column="1"
                     Command="{Binding SaveJSON}"

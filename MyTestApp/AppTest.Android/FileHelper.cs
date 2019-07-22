@@ -3,6 +3,7 @@ using System.Text;
 using Xamarin.Forms;
 using MyTestApp.Android;
 using System.Threading.Tasks;
+using Android.Content;
 
 [assembly: Dependency(typeof(FileHelper))]
 namespace MyTestApp.Android
@@ -26,11 +27,11 @@ namespace MyTestApp.Android
 
         public async Task WriteDocument(string fileExtension, string fileName, string fileText)
         {
-            var fileData = await global::Plugin.FilePicker.CrossFilePicker.Current.PickFile(new[] { fileExtension });
-            if (fileData == null)
-                return;
+            string fileNameExtension = fileName + fileExtension;
+            
+            var appDirectory = global::Xamarin.Essentials.FileSystem.AppDataDirectory;
 
-            using (var stream = fileData.GetStream())
+            using (var stream = File.Create(appDirectory + fileNameExtension))
             {
                 using (var writer = new StreamWriter(stream))
                 {

@@ -57,17 +57,12 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <Entry
-                            Grid.ColumnSpan="{OnPlatform Android=2,
-                                                         UWP=1}"
+                            IsVisible="{OnPlatform Android=False,
+                                                   UWP=True}"
                             Placeholder="Nombre de archivo"
                             Text="{Binding NewFileName}" />
                         <Button
-                            Grid.Row="{OnPlatform Android=1,
-                                                  UWP=0}"
-                            Grid.Column="{OnPlatform Android=0,
-                                                     UWP=1}"
-                            Grid.ColumnSpan="{OnPlatform Android=2,
-                                                         UWP=1}"
+                            Grid.Column="1"
                             Command="{Binding SaveFile}"
                             Text="Guardar"
                             VerticalOptions="End" />

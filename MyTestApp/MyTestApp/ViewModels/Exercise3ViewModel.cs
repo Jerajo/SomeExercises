@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using PropertyChanged;
 using Newtonsoft.Json;
 using MyTestApp.Models;
+using Xamarin.Essentials;
 using Newtonsoft.Json.Linq;
 using System.Windows.Input;
 using System.Collections.Generic;
@@ -105,7 +106,15 @@ namespace MyTestApp.ViewModels
                 {
                     IFileHelper service = DependencyService.Get<IFileHelper>();
 
-                    await service?.WriteDocument(".json", NewFileName, JSONText);
+                    string fileName = NewFileName ?? "Ejercicio3";
+
+                    await service?.WriteDocument(".json", fileName, JSONText);
+
+                    if (Device.RuntimePlatform == Device.Android)
+                    {
+                        var appDirectory = FileSystem.AppDataDirectory;
+                        await ShowAlert($"El archivo se guardo en: {appDirectory}/{fileName}.csv");
+                    }
                 }
                 else
                 {

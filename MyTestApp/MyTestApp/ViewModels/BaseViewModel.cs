@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Runtime.CompilerServices;
 using MyTestApp.ViewModels.Extensions;
+using Xamarin.Forms;
 
 namespace MyTestApp.ViewModels
 {
@@ -96,6 +97,9 @@ namespace MyTestApp.ViewModels
         protected bool ValidateNewFileName(string fileName)
         {
             Errors.Clear();
+            if (Device.RuntimePlatform == Device.Android)
+                return true;
+
             if (string.IsNullOrEmpty(fileName))
                 Errors.Add("El nombre del archivo no puede ser nulo.");
             else
