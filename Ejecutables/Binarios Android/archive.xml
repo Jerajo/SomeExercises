@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Archive>
+  <Name>MyTestApp.Android</Name>
+  <PackageName>com.companyname.MyTestApp</PackageName>
+  <PackageVersionCode>1</PackageVersionCode>
+  <PackageVersionName>1.0</PackageVersionName>
+  <CreationDate>636994322635053355</CreationDate>
+  <SolutionName>MyTestApp</SolutionName>
+  <SolutionPath>C:\Users\jesse\source\repos\MyTestApp\MyTestApp.sln</SolutionPath>
+  <Status></Status>
+  <Configuration>
+    <DebugMode>false</DebugMode>
+  </Configuration>
+  <Comment />
+  <LastUsedKeystore>C:\Users\jesse\AppData\Local\Xamarin\Mono for Android\Keystore\Rawly\Rawly.keystore</LastUsedKeystore>
+  <TimeStampingAuthority />
+  <LastInsightsUploadDate>0</LastInsightsUploadDate>
+</Archive>

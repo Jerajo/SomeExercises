@@ -7,10 +7,10 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="f0c48dfb-b9bf-43c1-988a-f237efa5042f" Publisher="CN=TEXOIDER" Version="1.0.2.0" ProcessorArchitecture="x86" />
+  <Identity Name="f0c48dfb-b9bf-43c1-988a-f237efa5042f" Publisher="CN=TEXOIDER" Version="1.0.5.0" ProcessorArchitecture="x86" />
   <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>Exercises.Pitech</DisplayName>
+    <DisplayName>MyTestApp.UWP</DisplayName>
     <PublisherDisplayName>d496a10d-1aba-4a22-93a1-38f7a7f43544</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -24,7 +24,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="MyTestApp.UWP.exe" EntryPoint="MyTestApp.UWP.App">
-      <uap:VisualElements DisplayName="Exercises.Pitech" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="MyTestApp.UWP" BackgroundColor="transparent">
+      <uap:VisualElements DisplayName="MyTestApp.UWP" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="MyTestApp.UWP" BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png">
           <uap:ShowNameOnTiles>
             <uap:ShowOn Tile="square150x150Logo" />
