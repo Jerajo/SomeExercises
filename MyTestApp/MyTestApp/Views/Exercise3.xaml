@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MyTestApp.Views.Exercise3"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:c="clr-namespace:MyTestApp.Views.Converters"
+    xmlns:vm="clr-namespace:MyTestApp.ViewModels"
+    Title="{Binding Title}"
+    IsEnabled="{Binding IsNotBusy}">
+    <ContentPage.BindingContext>
+        <vm:Exercise3ViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <c:StringToBoolConverter x:Key="StringToBool" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView HorizontalScrollBarVisibility="Never">
+        <StackLayout Margin="10">
+            <Button
+                Command="{Binding GenerateOperation}"
+                HorizontalOptions="End"
+                Text="Generar Ejecicio" />
+            <ScrollView
+                BackgroundColor="Black"
+                HorizontalScrollBarVisibility="Always"
+                IsVisible="{Binding JSONText, Converter={x:StaticResource StringToBool}, Mode=OneWay}">
+                <Label
+                    Margin="10"
+                    LineBreakMode="NoWrap"
+                    Text="{Binding JSONText}"
+                    TextColor="White" />
+            </ScrollView>
+            <Grid IsVisible="{Binding JSONText, Converter={x:StaticResource StringToBool}, Mode=OneWay}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Entry Placeholder="Nombre de archivo" Text="{Binding NewFileName}" />
+                <Button
+                    Grid.Column="1"
+                    Command="{Binding SaveJSON}"
+                    Text="Guardar"
+                    VerticalOptions="End" />
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
