@@ -1,0 +1,11 @@
+{
+  "Instruccion": "Completa correctamente la oración arrastrando al espacio en blanco la cantidad que corresponda.",
+  "Problem": "Aumentar en un 30% la cantidad de 414, resulta en:",
+  "Options": [
+    "538",
+    "2,635",
+    "2,180",
+    "1,845"
+  ],
+  "Resoult": "538"
+}

@@ -108,10 +108,7 @@ namespace MyTestApp.ViewModels
                 {
                     IFileHelper service = DependencyService.Get<IFileHelper>();
 
-                    if (!NewFileName.Contains(".json"))
-                        NewFileName += ".json";
-
-                    await service?.WriteDocument(NewFileName, JSONText);
+                    await service?.WriteDocument(".json", NewFileName, JSONText);
                 }
                 else
                 {

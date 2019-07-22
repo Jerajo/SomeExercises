@@ -1,0 +1,14 @@
+{
+  "Instruccion": "Selecciona el resultado de la siguiente suma.",
+  "Problem": [
+    "18,977",
+    "91,432"
+  ],
+  "Options": [
+    "74,580",
+    "110,409",
+    "3,254",
+    "97,864"
+  ],
+  "Resoult": "110,409"
+}

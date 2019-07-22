@@ -100,9 +100,9 @@ namespace MyTestApp.ViewModels
                 Errors.Add("El nombre del archivo no puede ser nulo.");
             else
             {
-                Regex regex = new Regex("^[A-Za-z0-9.-_]*$");
+                Regex regex = new Regex(@"^[A-Za-z0-9\-_.]*$");
                 if (!regex.IsMatch(fileName))
-                    Errors.Add("El nombre del archivo no puede tener caracteres epeciales.");
+                    Errors.Add("El nombre del archivo solo puede tener caracteres de: \"a-Z0-9._-\".");
             }
 
             return Errors.Count == 0;
@@ -218,7 +218,7 @@ namespace MyTestApp.ViewModels
             if (numberInWords.Contains("uno mil"))
                 numberInWords = numberInWords.Replace("uno mil", "un mil");
 
-            if ((new Regex("^[cien ]*$").IsMatch(numberInWords)) && !numberInWords.Contains("cien mil"))
+            if ((new Regex("(cien )").IsMatch(numberInWords)) && !numberInWords.Contains("cien mil"))
                 numberInWords = numberInWords.Replace("cien ", "ciento ");
         }
 

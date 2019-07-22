@@ -37,9 +37,8 @@ namespace MyTestApp.UWP
             }
         }
 
-        public async Task WriteDocument(string fileName, string fileText)
+        public async Task WriteDocument(string fileExtension, string fileName, string fileText)
         {
-            string fileExtension = Path.GetExtension(fileName);
             FileSavePicker picker = new FileSavePicker();
             picker.SuggestedFileName = Path.GetFileName(fileName);
             picker.FileTypeChoices.Add("Texto Plano", new List<string>() { fileExtension });

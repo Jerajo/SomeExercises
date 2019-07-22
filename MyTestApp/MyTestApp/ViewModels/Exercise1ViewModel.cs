@@ -129,10 +129,7 @@ namespace MyTestApp.ViewModels
                 {
                     IFileHelper service = DependencyService.Get<IFileHelper>();
 
-                    if (!NewFileName.Contains(".csv"))
-                        NewFileName += ".csv";
-
-                    await service?.WriteDocument(NewFileName, OrganizedDocumentText);
+                    await service?.WriteDocument(".csv", NewFileName, OrganizedDocumentText);
                 }
                 else
                 {
@@ -165,15 +162,16 @@ namespace MyTestApp.ViewModels
                 Match match = regex.Match(item);
                 string matchResoult = match.Value;
 
-                if (string.IsNullOrEmpty(matchResoult))
+                //Validation deprecated
+                //if (string.IsNullOrEmpty(matchResoult))
+                //    continue; 
+
+                string[] dominicanData = item.Split(',');
+
+                if (dominicanData.Length < 2)
                     continue;
 
-                string[] dominican = item.Split(',');
-
-                if (dominican.Length < 2)
-                    continue;
-
-                Dominicans.Add(dominican[1].Reverse(), dominican[0]);
+                Dominicans.Add(dominicanData[1].Reverse(), dominicanData[0]);
             }
         }
 

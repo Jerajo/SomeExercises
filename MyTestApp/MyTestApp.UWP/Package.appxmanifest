@@ -27,9 +27,4 @@
       </uap:VisualElements>
     </Application>
   </Applications>
-  <Capabilities>
-    <Capability Name="internetClient" />
-    <Capability Name="codeGeneration" />
-    <uap:Capability Name="removableStorage" />
-  </Capabilities>
 </Package>
