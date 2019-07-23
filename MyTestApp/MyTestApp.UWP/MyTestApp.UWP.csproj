@@ -147,7 +147,6 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="xamarin_logo.png" />
-    <Content Include="add.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -165,9 +164,6 @@
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.581479" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.8" />
-    <PackageReference Include="Xamarin.Plugin.FilePicker">
-      <Version>2.1.18</Version>
-    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyTestApp\MyTestApp.csproj">
