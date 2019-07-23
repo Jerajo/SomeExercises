@@ -1,4 +1,4 @@
-﻿# Exercises in C# Xamarin Forms MVVM
+﻿# Ejercicios en C# Xamarin Forms MVVM
 
 - Los Instaladores puedes descargarlos [aquí](https://github.com/Jerajo/SomeExercises/releases/download/0.0.1/Instaladores.7z). 
 - Los Ejecutable o binarios los descargas [aquí](https://github.com/Jerajo/SomeExercises/releases/download/0.0.1/Ejecutables.7z).
