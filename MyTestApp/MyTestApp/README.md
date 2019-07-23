@@ -17,7 +17,7 @@ La lógica de negocios, y las vistas se encuentran en este proyecto.
 
 **Modelos**
 - [FileModel](Models/FileModel.cs)
-- [OperationModel](Models/FileModel.cs)
+- [OperationModel](Models/OperationModel.cs)
 
 **VistasModelos**
 - [BaseViewModel](ViewsModels/BaseViewModel.cs)
