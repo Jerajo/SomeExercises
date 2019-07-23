@@ -2,29 +2,29 @@
 
 La lógica de negocios, y las vistas se encuentran en este proyecto.
 
-|  Header  | Value |
+|  Título  | Descripción |
 | ------------- | ------------- |
 | Lenguaje | C# |
 | Arquitectura  | [3-Tier](https://docs.microsoft.com/en-us/windows/win32/cossdk/using-a-three-tier-architecture-model) |
 | Patrón de diseño  | [MVVM](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/enterprise-application-patterns/mvvm)  |
 
 **Vistas**
-- [MainPage](/Views/MainPage.xaml)
-- [Exercise1](/Views/Exercise1.xaml)
-- [Exercise2](/Views/Exercise2.xaml)
-- [Exercise3](/Views/Exercise3.xaml)
-- [Exercise4](/Views/Exercise4.xaml)
+- [MainPage](Views/MainPage.xaml)
+- [Exercise1](Views/Exercise1.xaml)
+- [Exercise2](Views/Exercise2.xaml)
+- [Exercise3](Views/Exercise3.xaml)
+- [Exercise4](Views/Exercise4.xaml)
 
 **Modelos**
-- [FileModel](/Models/FileModel.cs)
-- [OperationModel](/Models/FileModel.cs)
+- [FileModel](Models/FileModel.cs)
+- [OperationModel](Models/FileModel.cs)
 
 **VistasModelos**
-- [BaseViewModel](/ViewsModels/BaseViewModel.cs)
-- [Exercise1ViewModel](/ViewsModels/Exercise1ViewModel.cs)
-- [Exercise2ViewModel](/Views/Exercise2ViewModel.cs)
-- [Exercise3ViewModel](/Views/Exercise3ViewModel.cs)
-- [Exercise4ViewModel](/Views/Exercise4ViewModel.cs)
+- [BaseViewModel](ViewsModels/BaseViewModel.cs)
+- [Exercise1ViewModel](ViewsModels/Exercise1ViewModel.cs)
+- [Exercise2ViewModel](Views/Exercise2ViewModel.cs)
+- [Exercise3ViewModel](Views/Exercise3ViewModel.cs)
+- [Exercise4ViewModel](Views/Exercise4ViewModel.cs)
 
 Este proyecto utliza los siguientes NuGets
 
