@@ -20,11 +20,11 @@ La lógica de negocios, y las vistas se encuentran en este proyecto.
 - [OperationModel](Models/OperationModel.cs)
 
 **VistasModelos**
-- [BaseViewModel](ViewsModels/BaseViewModel.cs)
-- [Exercise1ViewModel](ViewsModels/Exercise1ViewModel.cs)
-- [Exercise2ViewModel](Views/Exercise2ViewModel.cs)
-- [Exercise3ViewModel](Views/Exercise3ViewModel.cs)
-- [Exercise4ViewModel](Views/Exercise4ViewModel.cs)
+- [BaseViewModel](ViewModels/BaseViewModel.cs)
+- [Exercise1ViewModel](ViewModels/Exercise1ViewModel.cs)
+- [Exercise2ViewModel](ViewModels/Exercise2ViewModel.cs)
+- [Exercise3ViewModel](ViewModels/Exercise3ViewModel.cs)
+- [Exercise4ViewModel](ViewModels/Exercise4ViewModel.cs)
 
 Este proyecto utliza los siguientes NuGets
 
