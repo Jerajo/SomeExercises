@@ -1,4 +1,4 @@
-﻿# Ejeccicios en C# Xamarin Forms MVVM
+﻿# Exercises in C# Xamarin Forms MVVM
 
 - Instaladores en (aquí)[].
 - Ejecutable o binarios (aquí)[].
