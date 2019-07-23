@@ -22,7 +22,8 @@ namespace MyTestApp.ViewModels
             FilePath = "Seleccione un archivo.";
             IsFileLoaded = false;
             IsDocumentOrdened = false;
-            Dominicans = new Dictionary<string, string>();
+            OmitCorruptedIds = true;
+            Dominicans = new List<Tuple<string, string>>();
         }
 
         #region Properties
@@ -37,9 +38,11 @@ namespace MyTestApp.ViewModels
 
         public bool IsFileLoaded { get; set; }
 
+        public bool OmitCorruptedIds { get; set; }
+
         public bool IsDocumentOrdened { get; set; }
 
-        public Dictionary<string, string> Dominicans { get; set; }
+        public List<Tuple<string, string>> Dominicans { get; set; }
 
         #endregion
 
@@ -78,12 +81,17 @@ namespace MyTestApp.ViewModels
                 if (fileModel is null)
                     return;
 
-                LoadDocumentData(fileModel.FileData);
+                if (fileModel.FileExtension == ".csv")
+                {
+                    FilePath = fileModel.FilePath;
+                    DocumentText = fileModel.FileData;
 
-                FilePath = fileModel.FilePath;
-                DocumentText = fileModel.FileData;
-
-                IsFileLoaded = true;
+                    IsFileLoaded = true;
+                }
+                else
+                {
+                    await ShowAlert("Debe seleccionar un archivo .csv");
+                }
             }
             catch (Exception ex)
             {
@@ -101,14 +109,16 @@ namespace MyTestApp.ViewModels
                 return;
 
             IsBusy = true;
+            LoadDocumentData(DocumentText);
+
             if (Dominicans.Count > 2)
             {
 
                 string newDocument = "";
-                var organizedListOfDominicans = Dominicans.OrderBy(m => m.Key);
+                var organizedListOfDominicans = Dominicans.OrderBy(m => m.Item1);
 
                 foreach (var dominican in organizedListOfDominicans)
-                    newDocument += $"{dominican.Value},{dominican.Key.Reverse()}\n";
+                    newDocument += $"{dominican.Item2},{dominican.Item1.Reverse()}\n";
 
                 OrganizedDocumentText = newDocument;
             }
@@ -171,16 +181,18 @@ namespace MyTestApp.ViewModels
                 Match match = regex.Match(item);
                 string matchResoult = match.Value;
 
-                //Validation deprecated
-                //if (string.IsNullOrEmpty(matchResoult))
-                //    continue; 
-
                 string[] dominicanData = item.Split(',');
 
-                if (dominicanData.Length < 2)
-                    continue;
+                if (OmitCorruptedIds)
+                {
+                    if (string.IsNullOrEmpty(matchResoult) || dominicanData.Length != 2)
+                        continue;
 
-                Dominicans.Add(dominicanData[1].Reverse(), dominicanData[0]);
+                    if (Dominicans.Any(m => m.Item1 == dominicanData[1].Reverse()))
+                        continue;
+                }
+
+                Dominicans.Add(new Tuple<string, string>(dominicanData[1].Reverse(), dominicanData[0]));
             }
         }
 

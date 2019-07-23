@@ -15,6 +15,8 @@
             <StackLayout Orientation="{OnPlatform Android=Vertical, UWP=Horizontal}">
                 <Label
                     HorizontalOptions="CenterAndExpand"
+                    IsVisible="{OnPlatform Android=False,
+                                           UWP=True}"
                     Text="{Binding FilePath}"
                     VerticalOptions="CenterAndExpand" />
                 <Button
@@ -34,11 +36,21 @@
                             Text="{Binding DocumentText}"
                             TextColor="White" />
                     </ScrollView>
-                    <Button
-                        Grid.Row="1"
-                        Command="{Binding OrderDocumentInverseAscendance}"
-                        HorizontalOptions="End"
-                        Text="Ordenar" />
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Orientation="Horizontal" Spacing="20">
+                            <Switch IsToggled="{Binding OmitCorruptedIds}" />
+                            <Label Text="Omitir datos incorrectos" VerticalOptions="Center" />
+                        </StackLayout>
+                        <Button
+                            Grid.Column="1"
+                            Command="{Binding OrderDocumentInverseAscendance}"
+                            HorizontalOptions="End"
+                            Text="Ordenar" />
+                    </Grid>
                 </Grid>
                 <Grid IsVisible="{Binding IsDocumentOrdened}">
                     <Grid.RowDefinitions>
