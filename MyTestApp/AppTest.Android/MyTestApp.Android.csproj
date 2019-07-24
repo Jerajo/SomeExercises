@@ -138,15 +138,5 @@
       <Name>MyTestApp</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Assets\1.png" />
-    <Content Include="Assets\2.png" />
-    <Content Include="Assets\3.png" />
-    <Content Include="Assets\4.png" />
-    <Content Include="Resources\drawable\1.png" />
-    <Content Include="Resources\drawable\2.png" />
-    <Content Include="Resources\drawable\3.png" />
-    <Content Include="Resources\drawable\4.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
