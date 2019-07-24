@@ -34,4 +34,4 @@
 3. Siga las instrucciones de instalación.
 4. Ejecutela.
 
-- [Descargar](https://github.com/Jerajo/SomeExercises/releases/download/0.0.1/Ejecutables.7z) los ejecutable o binarios.
+[Descargar](https://github.com/Jerajo/SomeExercises/releases/download/0.0.1/Ejecutables.7z) los ejecutable o binarios.
