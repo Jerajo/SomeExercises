@@ -1,11 +1,10 @@
-﻿using MyTestApp.Models;
-using MyTestApp.PortableClases;
-using MyTestApp.ViewModels.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.RegularExpressions;
+﻿using System;
+using MyTestApp.Models;
 using System.Threading.Tasks;
+using MyTestApp.PortableClases;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using MyTestApp.ViewModels.Extensions;
 
 namespace MyTestApp.Services
 {
@@ -13,7 +12,6 @@ namespace MyTestApp.Services
     {
         #region Atributes
 
-        bool? isDisposing;
         OperationModel operation;
         Random randomizer;
 
@@ -21,13 +19,13 @@ namespace MyTestApp.Services
 
         public OperationGeneratorService()
         {
-            isDisposing = false;
             randomizer = new Random();
+            operation = new OperationModel();
         }
 
         #region Methods
 
-        public Task<OperationModel> CreateAdditionOperation()
+        internal Task<OperationModel> GenerateAdditionOperation()
         {
             operation = new OperationModel
             {
@@ -60,11 +58,6 @@ namespace MyTestApp.Services
             operation.Resoult = answer;
 
             return Task.FromResult(operation);
-        }
-
-        internal Task<OperationModel> GenerateAdditionOperation()
-        {
-            throw new NotImplementedException();
         }
 
         public Task<OperationModel> GeneratePercentageOperation()
@@ -195,10 +188,8 @@ namespace MyTestApp.Services
 
         public void Dispose()
         {
-            isDisposing = true;
             operation = null;
             randomizer = null;
-            isDisposing = null;
         }
 
         #endregion
