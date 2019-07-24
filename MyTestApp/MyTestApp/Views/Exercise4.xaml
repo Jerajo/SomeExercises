@@ -3,19 +3,13 @@
     x:Class="MyTestApp.Views.Exercise4"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:c="clr-namespace:MyTestApp.Views.Converters"
     xmlns:vm="clr-namespace:MyTestApp.ViewModels"
     Title="{Binding Title}"
-    IsEnabled="{Binding IsNotBusy}"
+    IsEnabled="{Binding IsNotBusy, Converter={StaticResource InverseBool}}"
     Visual="Material">
     <ContentPage.BindingContext>
         <vm:Exercise4ViewModel />
     </ContentPage.BindingContext>
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <c:StringToBoolConverter x:Key="StringToBool" />
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <ScrollView HorizontalScrollBarVisibility="Never">
         <StackLayout Margin="10,10,10,50">
             <Button
@@ -25,13 +19,13 @@
             <ScrollView
                 BackgroundColor="Black"
                 HorizontalScrollBarVisibility="Always"
-                IsVisible="{Binding JSONText, Converter={x:StaticResource StringToBool}, Mode=OneWay}">
+                IsVisible="{Binding JSONText, Converter={StaticResource StringToBool}, Mode=OneWay}">
                 <Label
                     Margin="10"
                     Text="{Binding JSONText}"
                     TextColor="White" />
             </ScrollView>
-            <Grid IsVisible="{Binding JSONText, Converter={x:StaticResource StringToBool}, Mode=OneWay}">
+            <Grid IsVisible="{Binding JSONText, Converter={StaticResource StringToBool}, Mode=OneWay}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
