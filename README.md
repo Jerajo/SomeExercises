@@ -2,7 +2,7 @@
 
 ## Instalación APK
 
-[Dergargar Instalador APK](https://github.com/Jerajo/SomeExercises/releases/download/0.0.2/Instalador_Android.7z)
+[Descargar Instalador APK](https://github.com/Jerajo/SomeExercises/releases/download/0.0.2/Instalador_Android.7z)
 
 **Requisitos**
 
@@ -11,16 +11,16 @@
 
 **Instalación**
 
-1. Pase el apk dentro del almacenamiento del movil o en el sd card.
+1. Pase el apk dentro del almacenamiento del móvil o en la sd card.
 2. Active los permisos para instalar app de fuentes desconocidas.
 2. Instale el apk.
 4. Si Play proted bloquea la instalación, selecciones "Instalar de todos modos" o "Install anyways"
-   o puede [desavilitar play proted.](https://support.mobile-tracker-free.com/hc/es/articles/360005346953-C%C3%B3mo-deshabilitar-Google-Play-Protect-)
+   o puede [deshabilitar play proted.](https://support.mobile-tracker-free.com/hc/es/articles/360005346953-C%C3%B3mo-deshabilitar-Google-Play-Protect-)
 3. Ejecute la aplicación.
 
 ## Instalación UWP App
 
-[Dergargar Instalador UWP](https://github.com/Jerajo/SomeExercises/releases/download/0.0.2/Instalador_Android.7z)
+[Descargar Instalador UWP](https://github.com/Jerajo/SomeExercises/releases/download/0.0.2/Instalador_Android.7z)
 
 **Requisitos**
 
@@ -34,4 +34,4 @@
 3. Siga las instrucciones de instalación.
 4. Ejecutela.
 
-- [Dergargar](https://github.com/Jerajo/SomeExercises/releases/download/0.0.1/Ejecutables.7z) los ejecutable o binarios.
+- [Descargar](https://github.com/Jerajo/SomeExercises/releases/download/0.0.1/Ejecutables.7z) los ejecutable o binarios.
