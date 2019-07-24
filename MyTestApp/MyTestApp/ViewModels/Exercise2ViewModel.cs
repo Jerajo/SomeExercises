@@ -66,7 +66,7 @@ namespace MyTestApp.ViewModels
             }
             catch (Exception ex)
             {
-                await ShowError($"Error al generar la operación el archivo: {ex.Message}");
+                await ShowError($"Error al generar la operación: {ex.Message}");
             }
             finally
             {

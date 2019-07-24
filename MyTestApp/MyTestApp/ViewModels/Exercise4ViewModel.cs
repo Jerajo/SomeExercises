@@ -4,11 +4,11 @@ using PropertyChanged;
 using Newtonsoft.Json;
 using MyTestApp.Models;
 using Xamarin.Essentials;
+using MyTestApp.Services;
 using Newtonsoft.Json.Linq;
 using System.Windows.Input;
 using MyTestApp.Models.Interfaces;
 using MyTestApp.ViewModels.Commands;
-using MyTestApp.Services;
 
 namespace MyTestApp.ViewModels
 {
@@ -66,7 +66,7 @@ namespace MyTestApp.ViewModels
             }
             catch (Exception ex)
             {
-                await ShowError($"Error al generar la operación el archivo: {ex.Message}");
+                await ShowError($"Error al generar la operación: {ex.Message}");
             }
             finally
             {
