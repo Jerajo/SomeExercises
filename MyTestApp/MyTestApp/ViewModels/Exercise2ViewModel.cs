@@ -4,9 +4,9 @@ using PropertyChanged;
 using Newtonsoft.Json;
 using MyTestApp.Models;
 using Xamarin.Essentials;
+using MyTestApp.Services;
 using Newtonsoft.Json.Linq;
 using System.Windows.Input;
-using System.Collections.Generic;
 using MyTestApp.Models.Interfaces;
 using MyTestApp.ViewModels.Commands;
 
@@ -19,22 +19,15 @@ namespace MyTestApp.ViewModels
         {
             Title = "Ejercicio 2";
             IsOperationCreated = false;
-            Operator = '+';
         }
 
         #region Properties
 
         public string NewFileName { get; set; }
 
-        public char Operator { get; set; }
-
         public string JSONText { get; set; }
 
         public bool IsOperationCreated { get; set; }
-
-        public JObject JSON { get; set; }
-
-        public OperationModel Operation { get; set; }
 
         #endregion
 
@@ -59,32 +52,17 @@ namespace MyTestApp.ViewModels
             if (IsBusy)
                 return;
 
+            IsBusy = true;
+
             try
             {
-                IsBusy = true;
-
-                Operation = new OperationModel
+                using (var service = new OperationGeneratorService())
                 {
-                    Instruccion = "Selecciona el resultado de la siguiente suma.",
-                    Problem = new List<string>
-                    {
-                        Randomizer.Next(100000).ToString("n0"),
-                        Randomizer.Next(100000).ToString("n0")
-                    },
-                    Options = new List<string>
-                    {
-                        Randomizer.Next(100000).ToString("n0"),
-                        Randomizer.Next(100000).ToString("n0"),
-                        Randomizer.Next(100000).ToString("n0"),
-                        Randomizer.Next(100000).ToString("n0")
-                    },
-                    Resoult = 0
-                };
+                    OperationModel operation = await service.GenerateAdditionOperation();
 
-                InsertCorretOptions(Operation, Operator);
-
-                JSON = JObject.FromObject(Operation);
-                JSONText = JSON.ToString(Formatting.Indented);
+                    JObject json = JObject.FromObject(operation);
+                    JSONText = json.ToString(Formatting.Indented);
+                }
             }
             catch (Exception ex)
             {

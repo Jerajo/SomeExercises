@@ -142,7 +142,7 @@ namespace MyTestApp.ViewModels
 
                     string fileName = NewFileName ?? "Ejercicio1Ordenado";
 
-                    await service?.WriteDocument(".csv", fileName, OrganizedDocumentText);
+                    await service?.WriteDocument(".csv", fileName, OrganizedDocumentText.Replace("\n", Environment.NewLine));
 
                     if (Device.RuntimePlatform == Device.Android)
                     {
